@@ -19,6 +19,7 @@ const config = {
   plugins: [
     '@docusaurus/plugin-ideal-image',
   ],
+  // themes: ['@docusaurus/theme-search-algolia'],
   presets: [
     [
       'classic',
@@ -45,8 +46,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // algolia: {
+      //   appId: 'YOUR_APP_ID',
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+      //   indexName: 'atools'
+      // },
       navbar: {
         title: 'ATools',
+        hideOnScroll: true,
         logo: {
           alt: 'Logo',
           src: 'img/atools_logo.png',
