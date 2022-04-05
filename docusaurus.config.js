@@ -9,7 +9,6 @@ const config = {
   title: 'ATools',
   tagline: '现代 JavaScript 实用工具库 🔧',
   url: 'https://wangdaoo.github.io/',
-  // url: 'https://wangdaoo.github.io/atools-docs/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -50,7 +49,7 @@ const config = {
         title: 'ATools',
         logo: {
           alt: 'Logo',
-          src: 'http://cdn.wangdaoo.com/atools_logo.png',
+          src: 'img/atools_logo.png',
         },
         items: [
           {
