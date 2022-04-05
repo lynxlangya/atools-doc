@@ -1,0 +1,29 @@
+---
+title: clearCookie 🚨
+sidebar_position: 3
+---
+
+# clearCookie 🚨
+
+:::danger
+`clearCookie` 清除 cookie
+
+注意: HttpOnly 不允许脚本访问, 客户端无法操作. 因此不推荐使用.
+:::
+
+### :bento: 参数
+
+1. [string] `name`: cookie 名称, 不传则清除所有 cookie
+
+### :fire: 返回值
+
+- 
+
+### :rocket: 示例
+
+```jsx title="clearCookie"
+// highlight-next-line
+import { clearCookie } from 'atools-js';
+
+clearCookie(); // 清除所有 cookie
+```

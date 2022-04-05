@@ -1,0 +1,30 @@
+---
+title: throttle
+sidebar_position: 4
+---
+
+# throttle
+
+:::note
+`throttle` 节流函数, 可以限制函数的调用频率.
+:::
+
+### :bento: 参数
+
+1. `fn` - 函数, 可以是一个匿名函数, 也可以是一个已经存在的函数
+2. `[delay]` - 时间间隔, 单位是毫秒 (ms). 默认值是 `1000`
+
+### :fire: 返回值
+
+`throttle` 返回一个函数, 这个函数可以被调用.
+
+### :rocket: 示例
+
+```jsx title="throttle"
+// highlight-next-line
+import { throttle } from 'atools-js';
+
+const fn = throttle(() => {
+  console.log('throttle');
+}, 1000); // 调用一次, 在 1000ms 后输出 throttle
+```

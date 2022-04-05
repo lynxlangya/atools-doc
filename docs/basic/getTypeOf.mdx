@@ -1,0 +1,44 @@
+---
+title: getTypeOf
+sidebar_position: 3
+---
+
+# getTypeOf
+
+:::note
+`getTypeOf` 用于获取一个值的类型，返回值为字符串。
+:::
+
+### :bento: 参数
+
+1. `any` - 可以是任何类型的值。
+
+### :fire: 返回值
+
+`string` - 返回值为字符串。
+
+- `string`
+- `number`
+- `boolean`
+- `symbol`
+- `null`
+- `undefined`
+- `object`
+- `array`
+- `regexp`
+- `date`
+- `error`
+- `function`
+- `asyncfunction`
+- `htmldocument`
+
+### :rocket: 示例
+
+```js title="getTypeOf"
+// highlight-next-line
+import { getTypeOf } from 'atools-js';
+
+getTypeOf(1); // number
+getTypeOf(true); // boolean
+getTypeOf(Symbol()); // symbol
+```

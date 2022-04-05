@@ -1,0 +1,32 @@
+---
+title: is
+sidebar_position: 1
+---
+
+# is
+
+:::note
+`is` 类型断言, 可以用来确定一个值的类型
+:::
+
+### :bento: 参数
+
+1. `any` - 需要断言的参数
+2. `string` - 需要对比的类型
+
+### :fire: 返回值
+
+`boolean`
+
+### :rocket: 示例
+
+```js title="is"
+// highlight-next-line
+import { is } from 'atools-js';
+
+is(1, 'number'); // true
+
+is(1, 'string'); // false
+
+is(new Date(), 'date'); // true
+```

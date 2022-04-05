@@ -1,0 +1,30 @@
+---
+title: removeHTMLTag
+sidebar_position: 7
+---
+
+# removeHTMLTag
+
+:::note
+`removeHTMLTag` 是一个将所有 HTML 标签从一个字符串中删除的函数
+:::
+
+### :bento: 参数
+
+1. `string` - 待处理的字符串
+
+### :fire: 返回值
+
+`string` - 删除所有 HTML 标签后的字符串
+
+### :rocket: 示例
+
+```jsx title="removeHTMLTag"
+// highlight-next-line
+import { removeHTMLTag } from 'atools-js';
+
+const str = '<p>Hello <b>World</b></p>';
+
+const result = removeHTMLTag(str);
+console.log(result); // 'Hello World'
+```

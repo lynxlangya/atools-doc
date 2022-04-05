@@ -1,0 +1,31 @@
+---
+title: getCookie
+sidebar_position: 2
+---
+
+# getCookie
+
+:::note
+`getCookie` 获取 cookie, 可以获取指定的 cookie, 也可以获取所有的 cookie
+:::
+
+### :bento: 参数
+
+1. [string] `name`: cookie 名称
+
+### :fire: 返回值
+
+`{ Array | string | undefined }`
+
+### :rocket: 示例
+
+```jsx title="getCookie"
+// highlight-next-line
+import { getCookie } from 'atools-js';
+
+getCookie(); // 获取所有 cookie
+
+// or
+
+getCookie('name'); // 获取指定 cookie
+```

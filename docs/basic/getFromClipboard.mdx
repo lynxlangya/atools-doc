@@ -1,0 +1,30 @@
+---
+title: getFromClipboard
+sidebar_position: 6
+---
+
+# getFromClipboard
+
+:::note
+`getFromClipboard` 用于返回剪贴板的内容
+:::
+
+### :bento: 参数
+
+- `无`
+
+### :fire: 返回值
+
+`Promise` - 返回一个 `Promise` 对象，该对象的状态变化取决于剪贴板的内容是否可以被解析为 JSON 对象
+
+### :rocket: 示例
+
+```jsx title="getFromClipboard"
+// highlight-next-line
+import { getFromClipboard } from 'atools-js';
+
+const onClick = async () => {
+  const data = await getFromClipboard();
+  console.log(data); // { name: 'atools-js' }
+};
+```

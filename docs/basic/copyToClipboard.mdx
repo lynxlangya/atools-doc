@@ -1,0 +1,30 @@
+---
+title: copyToClipboard
+description: copyToClipboard
+sidebar_position: 5
+---
+
+# copyToClipboard
+
+:::note
+`copyToClipboard` 是一个将文本复制到剪贴板
+:::
+
+### :bento: 参数
+
+1. `string` - 待复制的文本
+
+### :fire: 返回值
+
+`Promise` - 如果复制成功，返回 `true`，否则返回 `false`
+
+### :rocket: 示例
+
+```jsx title="copyToClipboard"
+// highlight-next-line
+import { copyToClipboard } from 'atools-js';
+
+const text = 'hello world';
+
+copyToClipboard(text); // true or false
+```
