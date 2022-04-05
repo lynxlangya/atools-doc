@@ -8,9 +8,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ATools',
   tagline: '现代 JavaScript 实用工具库 🔧',
-  url: '/',
+  url: 'https://wangdaoo.github.io/',
   // url: 'https://wangdaoo.github.io/atools-docs/',
-  baseUrl: '/',
+  baseUrl: '/atools/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

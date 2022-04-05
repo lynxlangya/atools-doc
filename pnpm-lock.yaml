@@ -2111,7 +2111,7 @@ packages:
       '@docusaurus/utils': 2.0.0-beta.18
       '@docusaurus/utils-validation': 2.0.0-beta.18
       algoliasearch: 4.13.0
-      algoliasearch-helper: 3.7.4_algoliasearch@4.13.0
+      algoliasearch-helper: 3.8.0_algoliasearch@4.13.0
       clsx: 1.1.1
       eta: 1.12.3
       fs-extra: 10.0.1
@@ -2895,9 +2895,8 @@ packages:
       uri-js: 4.4.1
     dev: false
 
-  /algoliasearch-helper/3.7.4_algoliasearch@4.13.0:
-    resolution: {integrity: sha512-KmJrsHVm5TmxZ9Oj53XdXuM4CQeu7eVFnB15tpSFt+7is1d1yVCv3hxCLMqYSw/rH42ccv013miQpRr268P8vw==}
-    deprecated: 3.7.3
+  /algoliasearch-helper/3.8.0_algoliasearch@4.13.0:
+    resolution: {integrity: sha512-c1ZuXe6bf1JH/zD5h65gk04tMJ36UtvdfCmSC9F6QfTspa/smrbSnJy9F4X7SNkXdj+MKFP82IXhs9lEt+x5+w==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 5'
     dependencies:
@@ -3044,7 +3043,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.20.2
-      caniuse-lite: 1.0.30001324
+      caniuse-lite: 1.0.30001325
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3258,7 +3257,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001324
+      caniuse-lite: 1.0.30001325
       electron-to-chromium: 1.4.103
       escalade: 3.1.1
       node-releases: 2.0.2
@@ -3336,13 +3335,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.20.2
-      caniuse-lite: 1.0.30001324
+      caniuse-lite: 1.0.30001325
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: false
 
-  /caniuse-lite/1.0.30001324:
-    resolution: {integrity: sha512-/eYp1J6zYh1alySQB4uzYFkLmxxI8tk0kxldbNHXp8+v+rdMKdUBNjRLz7T7fz6Iox+1lIdYpc7rq6ZcXfTukg==}
+  /caniuse-lite/1.0.30001325:
+    resolution: {integrity: sha512-sB1bZHjseSjDtijV1Hb7PB2Zd58Kyx+n/9EotvZ4Qcz2K3d0lWB8dB4nb8wN/TsOGFq3UuAm0zQZNQ4SoR7TrQ==}
     dev: false
 
   /ccount/1.1.0:
@@ -3623,7 +3622,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       dot-prop: 5.3.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       make-dir: 3.1.0
       unique-string: 2.0.0
       write-file-atomic: 3.0.3
@@ -4033,7 +4032,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       globby: 11.1.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       is-glob: 4.0.3
       is-path-cwd: 2.2.0
       is-path-inside: 3.0.3
@@ -4242,7 +4241,7 @@ packages:
     resolution: {integrity: sha512-GIm3fQfwLJ8YZx2smuHpBKkXC1yOk+OBEmKckVyL0i/ea8mqDEykK3ld5dgH1QYPNyT/lIllxV2LULnxCHaHkA==}
     engines: {node: '>=10.13.0'}
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       tapable: 2.2.1
     dev: false
 
@@ -4636,7 +4635,7 @@ packages:
     resolution: {integrity: sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==}
     engines: {node: '>=12'}
     dependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: false
@@ -4646,7 +4645,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       at-least-node: 1.0.0
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: false
@@ -4826,8 +4825,8 @@ packages:
       url-parse-lax: 3.0.0
     dev: false
 
-  /graceful-fs/4.2.9:
-    resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
+  /graceful-fs/4.2.10:
+    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: false
 
   /gray-matter/4.0.3:
@@ -5548,7 +5547,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: false
 
   /keyv/3.1.0:
@@ -8381,7 +8380,7 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: false
 
   /wbuf/1.7.3:
@@ -8457,7 +8456,7 @@ packages:
       default-gateway: 6.0.3
       del: 6.0.0
       express: 4.17.3
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       html-entities: 2.3.3
       http-proxy-middleware: 2.0.4_@types+express@4.17.13
       ipaddr.js: 2.0.1
@@ -8524,7 +8523,7 @@ packages:
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
       json-parse-better-errors: 1.0.2
       loader-runner: 4.2.0
       mime-types: 2.1.35
@@ -8592,7 +8591,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 4.2.3
+      string-width: 1.0.2
     dev: false
 
   /widest-line/3.1.0:
