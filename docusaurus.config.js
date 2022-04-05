@@ -10,7 +10,7 @@ const config = {
   tagline: '现代 JavaScript 实用工具库 🔧',
   url: 'https://wangdaoo.github.io/',
   // url: 'https://wangdaoo.github.io/atools-docs/',
-  baseUrl: '/atools/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
