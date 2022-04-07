@@ -53,7 +53,7 @@ const config = {
       // },
       navbar: {
         title: 'ATools',
-        hideOnScroll: true,
+        // hideOnScroll: true,
         logo: {
           alt: 'Logo',
           src: 'img/atools_logo.png',
