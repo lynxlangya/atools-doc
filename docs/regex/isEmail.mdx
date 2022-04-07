@@ -1,0 +1,29 @@
+---
+title: isEmail
+sidebar_position: 3
+---
+
+# isEmail
+
+:::note
+`isEmail` 是否为邮箱地址
+:::
+
+### :bento: 参数
+
+1. `string` - 待判断的值
+
+### :fire: 返回值
+
+`boolean` - 判断结果
+
+### :rocket: 示例
+
+```jsx title="isEmail"
+// highlight-next-line
+import { isEmail } from 'atools-js';
+
+isEmail('wangdaoo@yeah.net'); // true
+isEmail('#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'); // false
+isEmail('Hello'); // false
+```

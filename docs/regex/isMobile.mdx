@@ -1,0 +1,29 @@
+---
+title: isMobile
+sidebar_position: 2
+---
+
+# isMobile
+
+:::note
+`isMobile` 是否为大陆手机号码
+:::
+
+### :bento: 参数
+
+1. `string` - 待判断的值
+
+### :fire: 返回值
+
+`boolean` - 判断结果
+
+### :rocket: 示例
+
+```jsx title="isMobile"
+// highlight-next-line
+import { isMobile } from 'atools-js';
+
+isMobile('130123456789012'); // false
+isMobile('1301234567890123'); // false
+isMobile('17511688888'); // true
+```

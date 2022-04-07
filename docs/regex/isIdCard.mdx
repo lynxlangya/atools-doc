@@ -1,0 +1,35 @@
+---
+title: isIdCard
+sidebar_position: 4
+---
+
+# isIdCard
+
+:::note
+`isIdCard` 是否为大陆身份证号码
+
+支持 (1/2) 代, 15 位或 18 位
+:::
+
+### :bento: 参数
+
+1. `string` - 待判断的值
+2. `[number]` - 默认同时匹配 15 位和 18 位身份证号码, 1: 匹配 15 位, 2: 匹配 18 位
+
+### :fire: 返回值
+
+`boolean` - 判断结果
+
+### :rocket: 示例
+
+```jsx title="isIdCard"
+// highlight-next-line
+import { isIdCard } from 'atools-js';
+
+isIdCard('420102199003027001'); // true
+isIdCard('42010219900302700'); // false
+isIdCard('42010219900302700X'); // true
+isIdCard('42010219900302700x'); // true
+isIdCard('370202541216162', 1); // true
+isIdCard('42010219900302700x', 2); // true
+```
