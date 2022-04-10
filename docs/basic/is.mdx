@@ -5,9 +5,7 @@ sidebar_position: 1
 
 # is
 
-:::note
-`is` 类型断言, 可以用来确定一个值的类型
-:::
+> `is` 类型断言, 可以用来确定一个值的类型
 
 ### :bento: 参数
 
@@ -21,7 +19,6 @@ sidebar_position: 1
 ### :rocket: 示例
 
 ```js title="is"
-// highlight-next-line
 import { is } from 'atools-js';
 
 is(1, 'number'); // true
@@ -30,3 +27,16 @@ is(1, 'string'); // false
 
 is(new Date(), 'date'); // true
 ```
+
+### :bulb: 源码
+
+:::tip source code
+```js title="/atools/_basic/is.ts"
+// highlight-next-line
+import { getTypeOf } from './getTypeOf';
+
+export const is = (value: any, type: string): boolean => {
+  return getTypeOf(value) === type.toLowerCase();
+}
+```
+:::
