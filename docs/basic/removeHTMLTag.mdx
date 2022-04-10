@@ -5,9 +5,7 @@ sidebar_position: 7
 
 # removeHTMLTag
 
-:::note
-`removeHTMLTag` 是一个将所有 HTML 标签从一个字符串中删除的函数
-:::
+> `removeHTMLTag` 是一个将所有 HTML 标签从一个字符串中删除的函数
 
 ### :bento: 参数
 
@@ -19,8 +17,7 @@ sidebar_position: 7
 
 ### :rocket: 示例
 
-```jsx title="removeHTMLTag"
-// highlight-next-line
+```jsx
 import { removeHTMLTag } from 'atools-js';
 
 const str = '<p>Hello <b>World</b></p>';
@@ -28,3 +25,13 @@ const str = '<p>Hello <b>World</b></p>';
 const result = removeHTMLTag(str);
 console.log(result); // 'Hello World'
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/removeHTMLTag.ts"
+export const removeHTMLTag = (str: string): string => str.replace(/<[^>]+>/g, '');
+```
+
+:::

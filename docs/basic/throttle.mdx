@@ -5,9 +5,7 @@ sidebar_position: 4
 
 # throttle
 
-:::note
-`throttle` 节流函数, 可以限制函数的调用频率.
-:::
+> `throttle` 节流函数, 可以限制函数的调用频率
 
 ### :bento: 参数
 
@@ -20,11 +18,30 @@ sidebar_position: 4
 
 ### :rocket: 示例
 
-```jsx title="throttle"
-// highlight-next-line
+```jsx
 import { throttle } from 'atools-js';
 
 const fn = throttle(() => {
   console.log('throttle');
 }, 1000); // 调用一次, 在 1000ms 后输出 throttle
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/throttle.ts"
+export const throttle = (fn: Function, ms: number = 1000): Function => {
+  let isRunning = false;
+  return (...args: any[]) => {
+    if (isRunning) return;
+    isRunning = true;
+    setTimeout(() => {
+      fn(...args);
+      isRunning = false;
+    }, ms);
+  };
+};
+```
+
+:::

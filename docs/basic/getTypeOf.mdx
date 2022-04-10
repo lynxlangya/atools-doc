@@ -5,9 +5,7 @@ sidebar_position: 3
 
 # getTypeOf
 
-:::note
-`getTypeOf` 用于获取一个值的类型，返回值为字符串。
-:::
+> `getTypeOf` 用于获取一个值的类型，返回值为字符串。
 
 ### :bento: 参数
 
@@ -34,11 +32,23 @@ sidebar_position: 3
 
 ### :rocket: 示例
 
-```js title="getTypeOf"
-// highlight-next-line
+```js
 import { getTypeOf } from 'atools-js';
 
 getTypeOf(1); // number
 getTypeOf(true); // boolean
 getTypeOf(Symbol()); // symbol
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/getTypeOf.ts"
+export const getTypeOf = (param: unknown): string => {
+  const type = Object.prototype.toString.call(param).slice(8, -1);
+  return type.toLowerCase();
+};
+```
+
+:::

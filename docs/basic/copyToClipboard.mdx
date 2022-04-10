@@ -6,9 +6,7 @@ sidebar_position: 5
 
 # copyToClipboard
 
-:::note
-`copyToClipboard` 是一个将文本复制到剪贴板
-:::
+> `copyToClipboard` 是一个将文本复制到剪贴板
 
 ### :bento: 参数
 
@@ -20,11 +18,39 @@ sidebar_position: 5
 
 ### :rocket: 示例
 
-```jsx title="copyToClipboard"
-// highlight-next-line
+```jsx
 import { copyToClipboard } from 'atools-js';
 
 const text = 'hello world';
 
 copyToClipboard(text); // true or false
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/copyToClipboard.ts"
+export const copyToClipboard = (text: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.queryCommandValue('copy');
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
+    document.body.removeChild(textArea);
+  });
+};
+```
+
+:::

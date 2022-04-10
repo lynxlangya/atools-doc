@@ -5,9 +5,7 @@ sidebar_position: 6
 
 # getFromClipboard
 
-:::note
-`getFromClipboard` 用于返回剪贴板的内容
-:::
+> `getFromClipboard` 用于返回剪贴板的内容
 
 ### :bento: 参数
 
@@ -19,7 +17,7 @@ sidebar_position: 6
 
 ### :rocket: 示例
 
-```jsx title="getFromClipboard"
+```jsx
 // highlight-next-line
 import { getFromClipboard } from 'atools-js';
 
@@ -28,3 +26,24 @@ const onClick = async () => {
   console.log(data); // { name: 'atools-js' }
 };
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/getFromClipboard.ts"
+export const getFromClipboard = (): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    navigator.clipboard
+      .readText()
+      .then((text) => {
+        resolve(text);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+```
+
+:::

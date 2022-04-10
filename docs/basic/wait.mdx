@@ -5,9 +5,7 @@ sidebar_position: 2
 
 # wait
 
-:::note
-`wait` 延时函数，可以用来模拟网络延迟，比如：`wait(1)` 表示延迟 1 秒
-:::
+> `wait` 延时函数，可以用来模拟网络延迟，比如：`wait(1)` 表示延迟 1 秒
 
 ### :bento: 参数
 
@@ -19,12 +17,22 @@ sidebar_position: 2
 
 ### :rocket: 示例
 
-```js title="wait"
-// highlight-next-line
+```js
 import { wait } from 'atools-js';
 
 const handleTest = async () => {
   await wait(1);
-  console.log('wait 1s');   // wait 1s
+  console.log('wait 1s'); // wait 1s
 };
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_basic/wait.ts"
+export const wait = async (milliseconds: number) =>
+  new Promise((resolve) => setTimeout(resolve, milliseconds));
+```
+
+:::
