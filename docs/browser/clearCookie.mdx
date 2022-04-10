@@ -5,11 +5,9 @@ sidebar_position: 3
 
 # clearCookie 🚨
 
-:::danger
-`clearCookie` 清除 cookie
+> `clearCookie` 清除 cookie
 
-注意: HttpOnly 不允许脚本访问, 客户端无法操作. 因此不推荐使用.
-:::
+> **注意: HttpOnly 不允许脚本访问, 客户端无法操作. 因此不推荐使用.**
 
 ### :bento: 参数
 
@@ -17,13 +15,35 @@ sidebar_position: 3
 
 ### :fire: 返回值
 
-- 
+-
 
 ### :rocket: 示例
 
-```jsx title="clearCookie"
-// highlight-next-line
+```jsx
 import { clearCookie } from 'atools-js';
 
 clearCookie(); // 清除所有 cookie
 ```
+
+### :bulb: 源码
+
+:::danger source code
+
+```js title="/atools/_browser/clearCookie.ts"
+export const clearCookie = () => {
+  // Environmental Test
+  if (!isBrowser)
+    throw new Error("Non-browser environment, unavailable 'cleanCookies'");
+
+  if (!document.cookie) throw new Error('No Cookie Found');
+
+  for (let i = 0; i < getCookie().length; i++) {
+    const element = getCookie()[i];
+    document.cookie = element
+      .replace(/^ +/, '')
+      .replace(element.match(/=(\S*)/)[1], ``);
+  }
+};
+```
+
+:::

@@ -5,9 +5,7 @@ sidebar_position: 3
 
 # isEmail
 
-:::note
-`isEmail` 是否为邮箱地址
-:::
+> `isEmail` 是否为邮箱地址
 
 ### :bento: 参数
 
@@ -19,11 +17,24 @@ sidebar_position: 3
 
 ### :rocket: 示例
 
-```jsx title="isEmail"
-// highlight-next-line
+```jsx
 import { isEmail } from 'atools-js';
 
 isEmail('wangdaoo@yeah.net'); // true
 isEmail('#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'); // false
 isEmail('Hello'); // false
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_regex/isEmail.ts"
+export const isEmail = (str: string): boolean => {
+  const reg =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return reg.test(str);
+};
+```
+
+:::

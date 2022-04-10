@@ -5,11 +5,9 @@ sidebar_position: 4
 
 # isIdCard
 
-:::note
-`isIdCard` 是否为大陆身份证号码
-
-支持 (1/2) 代, 15 位或 18 位
-:::
+> `isIdCard` 是否为大陆身份证号码
+>
+> **支持 (1/2) 代, 15 位或 18 位**
 
 ### :bento: 参数
 
@@ -22,8 +20,7 @@ sidebar_position: 4
 
 ### :rocket: 示例
 
-```jsx title="isIdCard"
-// highlight-next-line
+```jsx
 import { isIdCard } from 'atools-js';
 
 isIdCard('420102199003027001'); // true
@@ -33,3 +30,30 @@ isIdCard('42010219900302700x'); // true
 isIdCard('370202541216162', 1); // true
 isIdCard('42010219900302700x', 2); // true
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_regex/isIdCard.ts"
+export const isIdCard = (str: string, type: number = 0): boolean => {
+  // 1代身份证
+  const reg1 = /^[1-9]\d{7}(?:0\d|10|11|12)(?:0[1-9]|[1-2][\d]|30|31)\d{3}$/;
+  // 2代身份证
+  const reg2 =
+    /^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|10|11|12)(?:0[1-9]|[1-2]\d|30|31)\d{3}[\dXx]$/;
+  const reg =
+    /^\d{6}((((((19|20)\d{2})(0[13-9]|1[012])(0[1-9]|[12]\d|30))|(((19|20)\d{2})(0[13578]|1[02])31)|((19|20)\d{2})02(0[1-9]|1\d|2[0-8])|((((19|20)([13579][26]|[2468][048]|0[48]))|(2000))0229))\d{3})|((((\d{2})(0[13-9]|1[012])(0[1-9]|[12]\d|30))|((\d{2})(0[13578]|1[02])31)|((\d{2})02(0[1-9]|1\d|2[0-8]))|(([13579][26]|[2468][048]|0[048])0229))\d{2}))(\d|X|x)$/;
+
+  switch (type) {
+    case 1:
+      return reg1.test(str);
+    case 2:
+      return reg2.test(str);
+    default:
+      return reg.test(str);
+  }
+};
+```
+
+:::

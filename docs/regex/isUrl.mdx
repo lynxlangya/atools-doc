@@ -5,9 +5,7 @@ sidebar_position: 1
 
 # isUrl
 
-:::note
-`isUrl` 判断是否是一个网址
-:::
+> `isUrl` 判断是否是一个网址
 
 ### :bento: 参数
 
@@ -19,8 +17,7 @@ sidebar_position: 1
 
 ### :rocket: 示例
 
-```jsx title="isUrl"
-// highlight-next-line
+```jsx
 import { isUrl } from 'atools-js';
 
 isUrl('http://www.baidu.com'); // true
@@ -28,3 +25,17 @@ isUrl('https://www.baidu.com'); // true
 isUrl('baidu.com/index.html?a=1&b=2#hash'); // true
 isUrl('baidu'); // false
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_regex/isUrl.ts"
+export const isUrl = (str: string): boolean => {
+  const reg =
+    /^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/;
+  return reg.test(str);
+};
+```
+
+:::

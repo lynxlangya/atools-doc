@@ -5,9 +5,7 @@ sidebar_position: 1
 
 # isBrowser
 
-:::note
-`isBrowser` 判断当前环境是否是浏览器环境
-:::
+> `isBrowser` 判断当前环境是否是浏览器环境
 
 ### :bento: 参数
 
@@ -19,9 +17,19 @@ sidebar_position: 1
 
 ### :rocket: 示例
 
-```jsx title="isBrowser"
-// highlight-next-line
+```jsx
 import { isBrowser } from 'atools-js';
 
 console.log(isBrowser);
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_browser/isBrowser.ts"
+export const isBrowser: boolean =
+  typeof window === 'object' && typeof document === 'object';
+```
+
+:::

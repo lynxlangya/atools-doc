@@ -5,9 +5,7 @@ sidebar_position: 5
 
 # isRegexWith
 
-:::note
-`isRegexWith` 自定义正则表达
-:::
+> `isRegexWith` 自定义正则表达
 
 ### :bento: 参数
 
@@ -20,13 +18,23 @@ sidebar_position: 5
 
 ### :rocket: 示例
 
-```jsx title="isRegexWith"
-// highlight-next-line
+```jsx
 import { isRegexWith } from 'atools-js';
 
-const email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const email =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 isRegexWith(email, 'wangdaoo@yeah.net'); // true
 
 isRegexWith(/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/, 'rgba(0,0,0,1)'); // false
 ```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_regex/isRegexWith.ts"
+export const isRegexWith = (regex: RegExp, str: string): boolean => regex.test(str);
+```
+
+:::
