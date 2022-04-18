@@ -1,0 +1,37 @@
+---
+title: randomInt
+sidebar_position: 1
+---
+
+# randomIP
+
+> `randomInt` 随机生成一个指定范围内的整数
+
+### :bento: 参数
+
+1. `[number]` - min
+2. `[number]` - max
+
+### :fire: 返回值
+
+`number` - 随机数
+
+### :rocket: 示例
+
+```jsx
+import { randomInt } from 'atools-js';
+
+randomInt(0, 10); // 9
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_random/randomInt.ts"
+export const randomInt = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+```
+
+:::
