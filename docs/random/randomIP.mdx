@@ -1,0 +1,66 @@
+---
+title: randomIP
+sidebar_position: 1
+---
+
+# randomIP
+
+> `randomIP` 随机生成一个 IP 地址, IPV4|IPV6 格式
+
+### :bento: 参数
+
+1. `[number]` - type, 0:IPV4, 1:IPV6, 默认 0
+
+### :fire: 返回值
+
+`string` - IP 地址
+
+### :rocket: 示例
+
+```jsx
+import { randomIP } from 'atools-js';
+
+randomIP(); // 192.xxx.x.x
+randomIP(0); // 122.xxx.xx.x
+randomIP(1); // 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_random/randomIP.ts"
+const randomInt = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+export const randomIP = (type: number = 0): string => {
+  const ipv4 =
+    randomInt(0, 255) +
+    '.' +
+    randomInt(0, 255) +
+    '.' +
+    randomInt(0, 255) +
+    '.' +
+    randomInt(0, 255);
+  const ipv6 =
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535) +
+    ':' +
+    randomInt(0, 65535);
+  return type ? ipv6 : ipv4;
+};
+```
+
+:::
