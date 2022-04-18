@@ -1,0 +1,36 @@
+---
+title: average
+sidebar_position: 1
+---
+
+# randomIP
+
+> `average` 计算数组中的平均值
+
+### :bento: 参数
+
+1. `array` - numbers
+
+### :fire: 返回值
+
+`number` - 平均值
+
+### :rocket: 示例
+
+```jsx
+import { average } from 'atools-js';
+
+average([1, 2, 3, 4, 5]); // 3
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_calc/average.ts"
+export const average = (numbers: number[]): number => {
+  return numbers.reduce((acc, curr) => acc + curr, 0) / numbers.length;
+};
+```
+
+:::
