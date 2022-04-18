@@ -1,0 +1,69 @@
+---
+title: randomColor
+sidebar_position: 3
+---
+
+# randomColor
+
+> `randomColor` 随机生成一个颜色值
+
+### :bento: 参数
+
+1. `[number]` - 0: rgb, 1: rgba, 2: hsl, 3: hsla, 4: hex
+
+### :fire: 返回值
+
+`string` - 颜色值
+
+### :rocket: 示例
+
+```jsx
+import { randomColor } from 'atools-js';
+
+randomColor(0); // rgb(67, 51, 154)
+randomColor(1); // rgba(42, 62, 81, 0.58)
+randomColor(2); // hsl(54, 11%, 30%)
+randomColor(3); // hsla(213, 51%, 57%, 0.2)
+randomColor(4); // #c79bd9
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_random/randomIP.ts"
+import { randomInt } from 'atools-js';
+
+export const randomColor = (type: number = 0): string => {
+  const rgb = `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(
+    0,
+    255
+  )})`;
+  const rgba = `rgba(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(
+    0,
+    255
+  )}, ${(randomInt(0, 255) / 255.0).toFixed(2)})`;
+  const hsl = `hsl(${randomInt(0, 360)}, ${randomInt(0, 100)}%, ${randomInt(
+    0,
+    100
+  )}%)`;
+  const hsla = `hsla(${randomInt(0, 360)}, ${randomInt(0, 100)}%, ${randomInt(
+    0,
+    100
+  )}%, ${(randomInt(0, 100) / 255.0).toFixed(1)})`;
+  const hex = `#${randomInt(0, 255).toString(16)}${randomInt(0, 255).toString(
+    16
+  )}${randomInt(0, 255).toString(16)}`;
+  return type
+    ? type === 1
+      ? rgba
+      : type === 2
+      ? hsl
+      : type === 3
+      ? hsla
+      : hex
+    : rgb;
+};
+```
+
+:::
