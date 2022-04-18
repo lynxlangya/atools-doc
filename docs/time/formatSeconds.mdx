@@ -1,0 +1,61 @@
+---
+title: formatSeconds
+sidebar_position: 2
+---
+
+# formatSeconds
+
+> `formatSeconds` 格式化秒数，可以指定格式，默认 'mm:ss'
+
+### :bento: 参数
+
+1. `number` - seconds
+2. `[string]` - 'hh:mm:ss' | 'mm:ss'，默认 'mm:ss'
+
+### :fire: 返回值
+
+`string` - 格式化后的字符串，'hh:mm:ss' | 'mm:ss'
+
+### :rocket: 示例
+
+```jsx
+import { formatSeconds } from 'atools-js';
+
+formatSeconds(0);   // '00:00'
+formatSeconds(1);   // '00:01'
+formatSeconds(59);  // '00:59'
+formatSeconds(3599);    // '59:59'
+formatSeconds(3600);    // '60:00'
+formatSeconds(3601);    // '60:01'
+formatSeconds(3599, 'mm:ss'); // '59:59'
+formatSeconds(3600, 'mm:ss'); // '60:00'
+formatSeconds(3601, 'mm:ss'); // '60:01'
+formatSeconds(3599, 'hh:mm:ss'); // '00:59:59'
+formatSeconds(3600, 'hh:mm:ss'); // '01:00:00'
+formatSeconds(3601, 'hh:mm:ss'); // '01:00:01'
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_time/diffDays.ts"
+export function formatSeconds(seconds: number, format?: string): string {
+    if (!seconds && !is(seconds, 'number')) return '00:00';
+    const hh = Math.floor(seconds / 3600);
+    const mm = Math.floor((seconds % 3600) / 60);
+    const ss = seconds % 60;
+    switch (format) {
+        case 'hh:mm:ss':
+            return `${hh < 10 ? '0' + hh : hh}:${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}`;
+        case 'mm:ss':
+            if (hh)  return `${hh * 60 + mm}:${ss < 10 ? '0' + ss : ss}`;
+            return `${mm}:${ss < 10 ? '0' + ss : ss}`;
+        default:
+            if (hh) return `${hh * 60 + mm}:${ss < 10 ? '0' + ss : ss}`;
+            return `${mm < 10 ? '0' + mm : mm}:${ss < 10 ? '0' + ss : ss}`;
+    }
+}
+```
+
+:::
