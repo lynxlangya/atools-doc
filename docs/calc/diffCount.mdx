@@ -1,0 +1,36 @@
+---
+title: diffCount
+sidebar_position: 3
+---
+
+# randomIP
+
+> `diffCount` 计算两个数的差值
+
+### :bento: 参数
+
+1. `number` - a
+2. `number` - b
+
+### :fire: 返回值
+
+`number` - 差值
+
+### :rocket: 示例
+
+```jsx
+import { diffCount } from 'atools-js';
+
+diffCount(1, 2); //1
+diffCount(2, 1); //1
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_calc/diffCount.ts"
+export const diffCount = (a: number, b: number): number => a > b ? a - b : b - a
+```
+
+:::
