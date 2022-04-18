@@ -1,0 +1,36 @@
+---
+title: sum
+sidebar_position: 2
+---
+
+# randomIP
+
+> `sum` 计算数组的和
+
+### :bento: 参数
+
+1. `array` - numbers
+
+### :fire: 返回值
+
+`number` - 平均值
+
+### :rocket: 示例
+
+```jsx
+import { sum } from 'atools-js';
+
+sum([1, 2, 3, 4, 5]); // 15
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_calc/sum.ts"
+export const sum = (numbers: number[]): number => {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+};
+```
+
+:::
