@@ -1,0 +1,42 @@
+---
+title: diffDays
+sidebar_position: 1
+---
+
+# diffDays
+
+> `diffDays` 计算两个日期之间的天数
+
+### :bento: 参数
+
+1. `Date` - 第一个日期
+2. `Date` - 第二个日期
+
+### :fire: 返回值
+
+`number` - 两个日期之间的天数
+
+### :rocket: 示例
+
+```jsx
+import { diffDays } from 'atools-js';
+
+const diff = diffDays(new Date('2019-01-01'), new Date('2019-01-02')); // 1
+
+const diff1 = diffDays(new Date(2020, 0, 1), new Date(2020, 0, 1)); // 0
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_time/diffDays.ts"
+export function diffDays(date1: Date, date2: Date): number {
+    const time1 = date1.getTime();
+    const time2 = date2.getTime();
+    const diff = Math.abs(time1 >= time2 ? time1 - time2 : time2 - time1);
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+```
+
+:::
