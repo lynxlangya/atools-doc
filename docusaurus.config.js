@@ -70,6 +70,11 @@ const config = {
           //   position: 'left'
           // },
           {
+            href: 'https://github.com/wangdaoo/atools/issues',
+            label: '需求池',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/wangdaoo/atools',
             label: 'GitHub',
             position: 'right',
