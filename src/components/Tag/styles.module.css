@@ -9,6 +9,12 @@
     color: #fff;
 }
 
+.svg{
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.2em;
+}
+
 [data-theme='dark'] .tagBox {
     background-color: #59d8bd;
 }
