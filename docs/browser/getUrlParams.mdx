@@ -1,0 +1,61 @@
+---
+title: getUrlParams
+sidebar_position: 5
+---
+
+import { Tag } from '../../src/components/Tag/index';
+
+# getUrlParams
+
+> `getUrlParams` 获取 `url` 中所有的参数，以对象的形式返回，如果参数名重复，则以数组的形式返回
+
+**:bookmark: 更新版本**
+
+<Tag color="#1877F2">v0.0.29</Tag>
+
+### :bento: 参数
+
+1. `string`: url
+
+### :fire: 返回值
+
+`object` - 参数对象
+
+### :rocket: 示例
+
+```jsx
+import { getUrlParams } from 'atools-js';
+
+getUrlParams('https://www.baidu.com/s?wd=123');  // { wd: '123' }
+getUrlParams('https://www.baidu.com/s?wd=123&ie=utf-8');  // { wd: '123', ie: 'utf-8' }
+getUrlParams('https://www.baidu.com/s?';  // {}
+getUrlParams('https://www.baidu.com/s?wd=123&wd=456');  // { wd: ['123', '456'] }
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_browser/getUrlParams.ts"
+export const getUrlParams = (url: string): object => {
+  const params: { [key: string]: any } = {};
+  const query = url.split('?')[1];
+  if (!query) return params;
+  const queryArr = query.split('&');
+  queryArr.forEach((item: string) => {
+    const [key, value] = item.split('=');
+    if (params[key]) {
+      if (Array.isArray(params[key])) {
+        params[key].push(value);
+      } else {
+        params[key] = [params[key], value];
+      }
+    } else {
+      params[key] = value;
+    }
+  });
+  return params;
+};
+```
+
+:::
