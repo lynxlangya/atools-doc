@@ -3,7 +3,7 @@ title: getBaseUrl
 sidebar_position: 4
 ---
 
-import { Tag } from '../../src/components/Tag';
+import { Tag } from '../../src/components/Tag/index';
 
 # getBaseUrl
 
@@ -34,7 +34,7 @@ getBaseUrl('https://www.baidu.com/s?'); // 'https://www.baidu.com/s'
 
 ### :bulb: 源码
 
-:::danger source code
+:::tip source code
 
 ```js title="/atools/_browser/getBaseUrl.ts"
 export const getBaseUrl = (url: string): string => {
