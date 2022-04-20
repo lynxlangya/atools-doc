@@ -1,0 +1,38 @@
+---
+title: getBaseUrl
+sidebar_position: 4
+---
+
+# getBaseUrl
+
+> `getBaseUrl` 获取?前面的路径
+
+### :bento: 参数
+
+1. `string`: url
+
+### :fire: 返回值
+
+`string` - 返回路径
+
+### :rocket: 示例
+
+```jsx
+import { getBaseUrl } from 'atools-js';
+
+getBaseUrl('https://www.baidu.com/s?wd=123'); // 'https://www.baidu.com/s'
+getBaseUrl('https://www.baidu.com/s?wd=123&ie=utf-8'); // 'https://www.baidu.com/s'
+getBaseUrl('https://www.baidu.com/s?'); // 'https://www.baidu.com/s'
+```
+
+### :bulb: 源码
+
+:::danger source code
+
+```js title="/atools/_browser/getBaseUrl.ts"
+export const getBaseUrl = (url: string): string => {
+  return url.includes('?') ? url.split('?')[0] : url;
+};
+```
+
+:::

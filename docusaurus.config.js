@@ -46,9 +46,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // algolia: {
-      //   appId: 'YOUR_APP_ID',
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
-      //   indexName: 'atools'
+      //   appId: '',
+      //   apiKey: '',
+      //   indexName: '',
+      //   searchParameters : {},
       // },
       navbar: {
         title: 'ATools',
