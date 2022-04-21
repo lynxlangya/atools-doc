@@ -45,12 +45,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // algolia: {
-      //   appId: '',
-      //   apiKey: '',
-      //   indexName: '',
-      //   searchParameters : {},
-      // },
+      algolia: {
+        appId: '7OURGM385T',
+        apiKey: 'aabf3ba6f45f9402632ecbab9200f37e',
+        indexName: 'atools',
+        searchParameters : {},
+      },
       navbar: {
         title: 'ATools',
         // hideOnScroll: true,
