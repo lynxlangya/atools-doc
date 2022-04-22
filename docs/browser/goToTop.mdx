@@ -1,0 +1,46 @@
+---
+title: goToTop
+sidebar_position: 6
+---
+
+import { Tag } from '../../src/components/Tag/index';
+
+# goToTop
+
+> `goToTop` 平滑滚动到顶部
+
+**:bookmark: 更新版本**
+
+<Tag color="#1877F2">v0.0.31</Tag>
+
+### :bento: 参数
+
+-
+
+### :fire: 返回值
+
+-
+
+### :rocket: 示例
+
+```jsx
+import { goToTop } from 'atools-js';
+
+goToTop();
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_browser/goToTop.ts"
+export const goToTop = (): void => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+        window.requestAnimationFrame(goToTop);
+        window.scrollTo(0, c - c / 8);
+    }
+}
+```
+
+:::
