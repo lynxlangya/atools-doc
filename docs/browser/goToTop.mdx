@@ -35,7 +35,7 @@ goToTop();
 
 ```js title="/atools/_browser/goToTop.ts"
 export const goToTop = (): void => {
-    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    const c = document?.documentElement?.scrollTop ?? document?.body?.scrollTop;
     if (c > 0) {
         window.requestAnimationFrame(goToTop);
         window.scrollTo(0, c - c / 8);
