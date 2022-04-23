@@ -9,7 +9,7 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        ATools 是一个小巧的 <code>JavaScript</code> 工具库，可以帮助你快速构建高质量的前端应用. 
+        ATools 是一个小巧的 <code>JavaScript</code> 工具库，可以帮助你快速完成高质量的业务需求
       </>
     ),
   },
