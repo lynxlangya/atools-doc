@@ -1,0 +1,46 @@
+---
+title: coorDistance
+sidebar_position: 4
+---
+
+# coorDistance
+
+> `coorDistance` 计算两个坐标点之间的距离
+
+### :bento: 参数
+
+1. `object` - 坐标点 `p1` 对象
+2. `object` - 坐标点 `p2` 对象
+
+### :fire: 返回值
+
+`number` - 两个坐标点之间的距离
+
+### :rocket: 示例
+
+```jsx
+import { coorDistance } from 'atools-js';
+
+const p1 = { x: 0, y: 0 };
+const p2 = { x: 1, y: 1 };
+coorDistance(p1, p2); // Math.sqrt(2);
+```
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_calc/coorDistance.ts"
+interface Point {
+  x: number;
+  y: number;
+}
+
+export const coorDistance = (p1: Point, p2: Point): number => {
+  const { x: x1, y: y1 } = p1;
+  const { x: x2, y: y2 } = p2;
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+};
+```
+
+:::
