@@ -84,7 +84,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `MIT Licensed | Copyright © ${new Date().getFullYear()} ATools, Author Keter`,
+        copyright: `MIT Licensed | Copyright © ${new Date().getFullYear()} ATools, Author wangdaoo`,
       },
       prism: {
         theme: lightCodeTheme,
