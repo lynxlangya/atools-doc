@@ -1,0 +1,57 @@
+---
+title: log
+sidebar_position: 7
+---
+
+import Image from '@theme/IdealImage';
+import Log from '/img/log.png';
+import { Tag } from '../../src/components/Tag/index';
+
+# log
+
+> `log` 控制台输出带有颜色的信息
+
+**:bookmark: 更新版本**
+
+<Tag color="#1877F2">v0.0.31</Tag>
+
+### :bento: 参数
+
+- `message`: 控制台输出的信息
+- `[color]`: 支持自定义颜色，函数柯里化的方式调用
+
+### :fire: 返回值
+
+- `undefined`: 无返回值
+
+### :rocket: 示例
+
+```jsx
+import { log } from 'atools-js';
+
+atools.log.info('log info');
+atools.log.error('log error');
+atools.log.warn('log warn');
+atools.log.debug('log debug');
+atools.log.success('log success');
+atools.log.color('#d4237a')('log color');
+```
+
+<Image img={Log} style={{ width: '50%' }} />
+
+### :bulb: 源码
+
+:::tip source code
+
+```js title="/atools/_browser/log.ts"
+export const log = {
+    info: (...args: any[]) => console.log(`%c%s`, 'color: #9E9E9E', ...args),
+    error: (...args: any[]) => console.log(`%c%s`, 'color: #d81e06', ...args),
+    warn: (...args: any[]) => console.log(`%c%s`, 'color: #ffc107', ...args),
+    debug: (...args: any[]) => console.log(`%c%s`, 'color: #2196f3', ...args),
+    success: (...args: any[]) => console.log(`%c%s`, 'color: #4caf50', ...args),
+    color: (color: string) => (...args: any[]) => console.log(`%c%s`, `color: ${color}`, ...args) as any,
+};
+```
+
+:::
