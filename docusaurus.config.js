@@ -49,7 +49,8 @@ const config = {
         appId: '7OURGM385T',
         apiKey: 'aabf3ba6f45f9402632ecbab9200f37e',
         indexName: 'atools',
-        searchParameters : {},
+        placeholder: 'search...',
+        contextualSearch: true,
       },
       navbar: {
         title: 'ATools',
